@@ -11,27 +11,34 @@ let opcion = prompt(menu);
 let peso = 0;
 do {
     switch (opcion) {
-case "1":
-        peso = prompt(ingresoPeso);
-        if (isNaN(peso)) {
-            alert(errorIngreso);
-        } else {
-            let altura = prompt(ingresoAltura);
-            if (isNaN(altura)) {
+        case "1":
+            let peso = prompt(ingresoPeso);
+            if (isNaN(peso)) {
                 alert(errorIngreso);
             } else {
-                let imc = calcularIMC(peso, altura);
-                alert(resultado + imc);
+                let altura = prompt(ingresoAltura);
+                if (isNaN(altura)) {
+                    alert(errorIngreso);
+                } else {
+                    let imc = calcularIMC(peso, altura);
+                
+                    if (imc < 18.5) {
+                        alert(resultado + imc.toFixed((2)) + "\nUsted está bajo de peso.");
+                    }
+                    else if (imc >= 18.5 && imc < 24.9) {
+                        alert(resultado + imc.toFixed((2)) + "\nUsted tiene un peso normal.");
+                    } else if (imc >= 25 && imc < 29.9) {
+                        alert(resultado + imc.toFixed((2)) + "\nUsted tiene sobrepeso.");
+                    } else {
+                        alert(resultado + imc.toFixed((2)) + "\nUsted tiene obesidad.");
+                    }
+                }
+            break;
             }
-        }
-        break;
-case "2":
-        alert(despedida);
-        break;
-default:
-        alert(errorOpcion);
-    }
-    opcion = prompt(menu);
+        case "2":
+                alert(despedida);
+                break;
+}
 }
 while (valor !== "2");
 function calcularIMC(peso, altura) {
