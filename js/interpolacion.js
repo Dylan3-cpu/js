@@ -1,4 +1,9 @@
-const nombre = "Juan";
-const edad = 25;
-const mensaje = `Hola, mi nombre es ${nombre} y tengo ${edad} años.`;
-console.log(mensaje); // Imprime: "Hola, mi nombre es Juan y tengo 25 años." 
+let edad = 18;
+
+if (edad >= 18) {
+    console.log('Eres mayor de edad.');
+} else if (edad >= 13) {
+    console.log('Eres un adolescente.');
+} else {
+    console.log('Eres un niño.');
+}
