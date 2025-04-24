@@ -14,3 +14,13 @@ console.log(eliminados);
 let frutos = ["manzana", "banano", "cereza"];
 frutos.splice(1, 0, "kiwi", "mango");
 console.log(frutos); 
+let colores = ["rojo","azul","verde"];
+colores.splice(1, 1, "amarillo");
+console.log(colores);
+let animales = ["perro", "gato", "conejo"];
+let resultado = animales.splice(1, 1, "tigre", "leon");
+console.log(animales); // ["perro", "tigre", "leon", "conejo"]
+console.log(resultado); // ["gato"]
+let letras = ["a", "b", "c", "d", "e"];
+letras.splice(2);
+console.log(letras); // ["a", "b",]
